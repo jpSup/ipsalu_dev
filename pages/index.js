@@ -3,9 +3,22 @@ import { getPage, getAllModulesForHome, getSocialLinks, getHeaderMenu, getFooter
 import Layout from '../components/Layout'
 import styles from '../styles/Home.module.scss'
 import Link from 'next/link'
+import {useEffect} from 'react'
 
 export default function Index({ home: { content, featuredImage, title }, modules, socials, headermenu, footermenu, preview }) {
   const homePageFeatureImge = featuredImage.node.sourceUrl
+
+  useEffect(()=>{
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  },[])
 
   return (
     <>
@@ -13,6 +26,7 @@ export default function Index({ home: { content, featuredImage, title }, modules
 
         <Head>
           <title>Home Page</title>
+          <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
         </Head>
 
         <div className={styles.feature_header}>
