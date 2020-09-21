@@ -22,6 +22,11 @@ p{
   font-size:1.8rem;
 }
 
+h1, h2, h3, h4, h5, h6{
+  margin-top:0;
+  margin-bottom: 0;
+}
+
 h2{
   font-size:3.2rem;
   font-family: 'El Messiri', sans-serif;
@@ -37,3 +42,99 @@ a{
   color: #F84685;      
 }
 
+/* buttons */
+.pillbutton{
+  background-color: #F84685;
+  color: white;
+  font-size: 1.3rem;
+  text-align: center;
+  border-radius: 33px;
+  padding: 0.6rem 2rem;
+  width: fit-content;
+  text-decoration: none;
+  font-family: 'Tw Cen MT', 'Roboto';
+}
+
+/*containers */
+.constrained_p{
+  max-width: 650px;
+  margin:0 auto;
+  font-size: 1.6rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.section__spacer{
+  height: 15rem;
+  background-color: #FFFEFA;
+}
+
+
+/* for accordion */
+
+/* Style the accordion section */
+.accordion__section {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Style the buttons that are used to open and close the accordion panel */
+.accordion {
+  background-color: #F8F8F8;
+  color: #191919;
+  cursor: pointer;
+  padding: 18px;
+  display: flex;
+  align-items: center;
+  border: none;
+  outline: none;
+  transition: background-color 0.6s ease;
+ 
+}
+
+
+/* Style the accordion content title */
+.accordion__title {
+  font-size: 1.6rem;
+  text-align: left;
+}
+
+
+/* Style the accordion content panel. Note: hidden by default */
+.accordion__content {
+  background-color: white;
+  overflow: auto;
+  transition: max-height 0.6s ease;
+
+}
+
+/* Style the accordion content text */
+.accordion__text {
+  font-size: 14px;
+  padding: 18px;
+}
+
+
+/* Style the accordion chevron icon */
+.accordion__icon {
+  margin-left: auto;
+  transition: transform 0.6s ease;
+}
+
+
+.accordion__icon.rotate {
+  transform: rotate(90deg);
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.accordion:hover,
+.active {
+  background-color: #F84685;
+}
+
+
+/*carousel overrides */
+
+.react-multi-carousel-dot-list{
+  bottom: 6rem !important;
+}

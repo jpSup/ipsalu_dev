@@ -1,7 +1,8 @@
 import Head from 'next/head'
 import { getPage, getAllModulesForHome, getSocialLinks, getHeaderMenu, getFooterMenu } from '../lib/api'
 import Layout from '../components/Layout'
-import styles from '../styles/Home.module.scss'
+import stylesGlobal from '../styles/common/Common.module.scss'
+import styles from '../styles/School.module.scss'
 import Link from 'next/link'
 
 export default function Index({ home: { content, featuredImage, title }, modules, socials, headermenu, footermenu, preview }) {
@@ -15,7 +16,7 @@ export default function Index({ home: { content, featuredImage, title }, modules
           <title>Home Page</title>
         </Head>
 
-        <div className={styles.feature_header}>
+        <div className={stylesGlobal.feature_header}>
 
           {title && (
             <h1>{title}</h1>
@@ -29,7 +30,7 @@ export default function Index({ home: { content, featuredImage, title }, modules
 
 
 
-        <div className={styles.page_content}>
+        <div className={stylesGlobal.page_content}>
 
           {content && (
             <div dangerouslySetInnerHTML={{ __html: content }} />
@@ -68,7 +69,7 @@ export default function Index({ home: { content, featuredImage, title }, modules
               <h3>Tantra Yoga Module</h3>
               <h6>24 levels of Tantra Yoga towards becoming a higher Yogi</h6>
               <Link href="#">
-                <a className={styles.pillbutton}>Explore</a>
+                <a className="pillbutton">Explore</a>
               </Link>
             </div>
 
@@ -88,43 +89,6 @@ export default function Index({ home: { content, featuredImage, title }, modules
                 </div>
               )
               ))}
-
-          </section>
-
-          <section className={styles.keep_in_touch}>
-
-            <h3>Keep in touch!</h3>
-            <p>Leave your name and email and get updates about our retreats and courses around the world. You can unsubscribe any time.</p>
-            <div className={styles.form_container} >
-
-              <div className={styles.container_horizontal}>
-
-                <div className={styles.form_field}>
-                  <label htmlFor="name">Your first name* </label>
-                  <input type="text" name="name" id="name" required />
-                </div>
-
-                <div className={styles.form_field}>
-                  <label htmlFor="email">Your email* </label>
-                  <input type="email" name="name" id="email" required />
-                </div>
-
-              </div>
-
-              <div className={styles.form_field}>
-                <input type="checkbox" id="tcs" name="tcs" />
-                <label htmlFor="tcs">I agree with the </label>
-                <Link href="#">
-                  <a className={styles.text_link}>Privacy Policy</a>
-                </Link>
-              </div>
-
-              <div className={styles.form_field}>
-                <input type="submit" value="Send" />
-              </div>
-
-
-            </div>
 
           </section>
 

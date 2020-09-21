@@ -1,0 +1,139 @@
+
+.four_modules_container{
+  width: 743px;
+  height: 636px;
+  margin: 0 auto;
+  position: relative;
+  background-image: url(https://habitek.co.za/wp/wp-content/uploads/2020/09/Group-683.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-top:6rem;
+
+  .circle_container{
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.21);
+    width: 238px;
+    height: 238px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding:1.8rem;
+    position: absolute;
+
+
+    h3{
+      font-family: 'El Messiri', sans-serif;
+      font-size:2.5rem;
+      margin-top: 0;
+      margin-bottom: 0;
+      line-height: 2.5rem;
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    h6{
+      font-family: 'Roboto', sans-serif;
+      font-size:1.4rem;
+      color: #F84685;
+      margin-top: 0;
+      margin-bottom: 0;
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    a{
+      font-family: 'Roboto', sans-serif;
+      font-size:1.7rem;
+      color: #F84685;
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    &.top_left{
+      top:41px;
+      left:0px;
+    }
+
+    &.top_right{
+      top:100px;
+      right:0px;
+    }
+
+    &.bot_left{
+      bottom:30px;
+      left:0px;
+    }
+    
+  }
+
+  .blank_container{
+    width:200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    bottom: 50px;
+    right: 190px;
+
+    h3{
+      font-family: 'El Messiri', sans-serif;
+      font-size: 3.2rem;
+      text-align: center;
+      margin-top:0px;
+      margin-bottom: 0px;
+      line-height: 3.2rem;
+    }
+
+    h6{
+      color: #F84685;
+      font-size: 1.4rem;
+      text-align: center;
+      line-height: 1.9rem;
+      margin-top:1rem;
+      margin-bottom: 0px;
+    }
+
+  } 
+
+}
+
+
+/* module cards */
+
+.modules_listing{
+  margin-top:10rem;
+
+  .module{
+    display: flex;
+    margin-bottom: 6rem;
+
+    img{
+      margin-right: 3rem;     
+      height: fit-content;
+    }
+
+    .copy_block_right{
+
+      h3{
+        font-size: 3.2rem;
+        margin-top: 0;
+        margin-bottom: 2rem;
+        font-family: 'El Messiri', sans-serif;
+      }
+
+      .excerpt{
+        font-family: 'Roboto', sans-serif;
+        font-size: 1.4rem;
+        line-height: 2.4rem;
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+
+    }
+
+  }
+
+}
+
+

@@ -1,0 +1,116 @@
+.courseContainer{
+
+    display: flex;
+    margin-bottom: 4rem;
+
+    .courseInfoContainer{
+        display: flex;
+        flex-direction: column;
+        margin-left: 1.5rem;
+        justify-content: center;
+        
+
+        .courseTitle{
+            font-size: 3.2rem;
+            font-family: 'El Messiri', sans-serif;
+            margin-bottom: 0.5rem;
+            font-weight: normal;
+        }
+
+        .courseSubTitle{
+            font-size: 1.4rem;
+            color:#F84685;
+            font-weight: normal;
+        }
+
+        .courseDescription{
+            font-size: 1.4rem;
+            line-height: 2.4rem;
+            color:#707070;
+
+        }
+    }
+
+}
+
+.exploreContainer{
+    display:flex;
+    background-color: #FFF6FA;
+    padding-top:6rem;
+    padding-bottom: 6rem;
+
+    .left{
+
+        width:40%;
+        padding-right: 4rem;
+
+
+        h2{
+            font-size: 4.2rem;
+    
+            span{
+                color: #707070;
+            }
+        }
+    
+        p{
+            font-size: 1.4rem;
+            color: #707070;
+            margin-bottom: 4rem;;
+        }
+
+    }
+
+    .right{
+        display: flex;
+
+        .rightContent{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            padding-left: 4rem;
+
+            .contentItem{
+                display: flex;
+                flex-direction: column;
+                margin-top: 5rem;
+                    margin-bottom: 5rem;
+                
+
+
+                h3{
+                    font-size: 3.2rem;
+                    font-family: 'El Messiri', sans-serif;
+
+                }
+
+                label{
+                    font-size: 1.6rem;
+                    margin-bottom: 1rem;
+                }
+
+                a{
+                    font-size: 1.6rem;
+                    color: #FF6199;    
+                    text-decoration: none;
+                    
+                    &:hover{
+                        text-decoration: underline;
+                    }
+                }
+
+                &:first-child, &:last-child{
+                    margin-top:0;
+                    margin-bottom: 0;
+                }
+
+
+            }
+
+        }
+
+
+
+    }
+    
+}

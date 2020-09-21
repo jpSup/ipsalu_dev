@@ -1,0 +1,86 @@
+
+.allTeachers{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+
+    .teacherContainer{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 25%;
+        margin-bottom: 6rem;
+
+        .teacherImageContainer{
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+    
+            .teacherImage{
+                width: 244px;
+                height: 244px;           
+            }
+
+            .hoverContainer{
+               
+
+                .hoverImage{
+                    position: absolute;
+                    top:0px;
+                    z-index: 1;
+                    left:50%;
+                    transform: translate(-50%, 66%);
+                    opacity: 0;
+                    transition: opacity 0.2s ease-in;
+                    
+                }
+
+
+                .socialLinks{
+                    display: flex;
+                    position: absolute;
+                    z-index: 1;
+                    top:70%;
+                    left:50%;  
+                    transform: translateX(-50%);
+                    opacity: 0;
+                    transition: opacity 0.2s ease-in;
+                    
+                    a:not(:last-child){
+                        margin-right:1rem;
+                    }
+                }
+
+            }
+
+            &:hover{
+    
+                .hoverImage {
+                    opacity: 0.8;
+                }
+
+                .socialLinks{
+                    opacity: 1;
+                }
+
+            }
+ 
+        }
+
+
+        .teacherName{
+            font-size: 3.2rem;
+            font-weight: bold;
+            font-family: 'Tw Cen MT', 'Roboto';
+        }
+
+        .teacherRole{
+            font-size: 1.8rem;
+            font-family: 'Tw Cen MT', 'Roboto';
+            margin-bottom: 1rem;
+        }
+        
+    }
+}
+
