@@ -6,7 +6,7 @@ import stylesGlobal from '../styles/common/Common.module.scss'
 import styles from '../styles/Events.module.scss'
 import Link from 'next/link'
 
-export default function Events({ content, events, socials, headermenu, footermenu, preview, testimonials }) {
+export default function Events({ content, events, socials, headermenu, footermenu, preview }) {
 
     return (
         <>
