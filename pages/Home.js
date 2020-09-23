@@ -1,11 +1,12 @@
 import Head from 'next/head'
-import { getHomePage, getSocialLinks, getHeaderMenu, getFooterMenu } from '../lib/api'
+import { getHomePage, getSocialLinks, getHeaderMenu, getFooterMenu, getTestimonials } from '../lib/api'
 import Layout from '../components/Layout'
+import Testimonials from "../components/Testimonial/Testimonials"
 import stylesGlobal from '../styles/common/Common.module.scss'
 import styles from '../styles/Home.module.scss'
 import Link from 'next/link'
 
-export default function Home({ home, socials, headermenu, footermenu, preview }) {
+export default function Home({ home, socials, headermenu, footermenu, preview, testimonials }) {
 
   return (
     <>
@@ -113,6 +114,8 @@ export default function Home({ home, socials, headermenu, footermenu, preview })
 
           <div className="section__spacer"></div>
 
+          <Testimonials testimonials={ testimonials } />
+
         </div>
 
       </Layout>
@@ -126,8 +129,9 @@ export async function getStaticProps({ preview = false }) {
   const socials = await getSocialLinks()
   const headermenu = await getHeaderMenu()
   const footermenu = await getFooterMenu()
+  const testimonials = await getTestimonials(preview)
 
   return {
-    props: { home, socials, headermenu, footermenu, preview },
+    props: { home, socials, testimonials, headermenu, footermenu, preview },
   }
 }

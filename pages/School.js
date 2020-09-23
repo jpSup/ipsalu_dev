@@ -1,11 +1,11 @@
 import Head from 'next/head'
-import { getPage, getAllModulesForHome, getSocialLinks, getHeaderMenu, getFooterMenu } from '../lib/api'
+import { getPage, getAllModulesForSchool, getSocialLinks, getHeaderMenu, getFooterMenu } from '../lib/api'
 import Layout from '../components/Layout'
 import stylesGlobal from '../styles/common/Common.module.scss'
 import styles from '../styles/School.module.scss'
 import Link from 'next/link'
 
-export default function Index({ home: { content, featuredImage, title }, modules, socials, headermenu, footermenu, preview }) {
+export default function Index({ home: { content, featuredImage, title }, courses, socials, headermenu, footermenu, preview }) {
   const homePageFeatureImge = featuredImage.node.sourceUrl
 
   return (
@@ -77,7 +77,8 @@ export default function Index({ home: { content, featuredImage, title }, modules
 
           <section className={styles.modules_listing}>
 
-            {modules && (
+            
+            {/* modules && (
 
               modules.edges.sort((a, b) => (a.node.position > b.node.position) ? 1 : -1).map((amodule, index) => (
                 <div className={styles.module} key={index}>
@@ -88,7 +89,22 @@ export default function Index({ home: { content, featuredImage, title }, modules
                   </div>
                 </div>
               )
-              ))}
+              )) */}
+
+              {
+                courses && (
+                  courses.edges.map( ( course, index )=> (
+                    <div className={styles.module} key={index}>
+                      <img src={course.node.courseFields.thumbnailImage.sourceUrl} alt={course.node.title} />
+                      <div className={styles.copy_block_right}>
+                        <h3>{course.node.title}</h3>
+                        <div className={styles.excerpt} dangerouslySetInnerHTML={{ __html: course.node.courseFields.shortDescription }} />
+                      </div>
+                    </div>
+ 
+                  )
+                )
+              )}
 
           </section>
 
@@ -102,12 +118,12 @@ export default function Index({ home: { content, featuredImage, title }, modules
 
 export async function getStaticProps({ preview = false }) {
   const home = await getPage("5")
-  const modules = await getAllModulesForHome(preview)
+  const courses = await getAllModulesForSchool(preview)
   const socials = await getSocialLinks()
   const headermenu = await getHeaderMenu()
   const footermenu = await getFooterMenu()
 
   return {
-    props: { home, modules, socials, headermenu, footermenu, preview },
+    props: { home, courses, socials, headermenu, footermenu, preview },
   }
 }

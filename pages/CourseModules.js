@@ -6,7 +6,8 @@ import stylesGlobal from '../styles/common/Common.module.scss'
 import styles from '../styles/CourseModules.module.scss'
 import Link from 'next/link'
 
-import Carousel from 'react-multi-carousel'
+import Testimonials from "../components/Testimonial/Testimonials"
+
 
 import Accordion from '../components/Accordion'
 
@@ -14,22 +15,7 @@ import Accordion from '../components/Accordion'
 export default function InnerCourse({ modulesPage: { title, courseFields }, socials, headermenu, footermenu, preview, testimonials, faqs }) {
   const pageFeatureImge = courseFields.featuredImage.sourceUrl
 
-  console.log(courseFields.onlineCoursesSchedule)
-
-  const responsive = {
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 1,
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 1,
-    },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 1,
-    },
-  }
+  
 
   return (
     <>
@@ -115,37 +101,7 @@ export default function InnerCourse({ modulesPage: { title, courseFields }, soci
 
         </div>
 
-        <section className={styles.testimonials}>
-          <h2>Hear it from our students</h2>
-
-          {testimonials &&
-            <Carousel
-              responsive={responsive}
-              ssr
-              className={styles.testimonialSlider}
-              slidesToSlide={1}
-              infinite
-              arrows={false}
-              dotListClass=""
-              renderButtonGroupOutside={false}
-              renderDotsOutside
-              showDots
-            >
-              {testimonials.nodes.map((testimonial, index) => (
-
-                <div className={styles.slideItem} key={index}>
-                  <iframe width="364" height="202" src={testimonial.testimonials_customField.testimonialVideo} frameBorder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-                  <div className={styles.rightSide}>
-                    <p>{testimonial.testimonials_customField.testimonialCopy}
-                      <span>{testimonial.testimonials_customField.nameAndLocation}</span>
-                    </p>
-                  </div>
-
-                </div>
-              ))}
-            </Carousel>
-          }
-        </section>
+        <Testimonials testimonials={ testimonials } />
 
         <div className="section__spacer"></div>
 

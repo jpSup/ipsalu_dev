@@ -1,0 +1,144 @@
+.feature_header{
+    
+    .filterContainer{
+        position: absolute;
+        top:50%;
+        transform: translateY(-50%);
+        right:100px;
+    }
+
+    h1{
+        left: 70px;
+        transform: translate(0%, -50%);
+    }
+    
+}
+
+.eventsRepeaterContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .eventsBox{
+        background-repeat: no-repeat;
+        background-position: right;
+        background-size: contain;
+        background-color: white;
+        border-bottom-left-radius: 20px;
+        border-top-left-radius: 20px;
+        padding: 4rem;
+        max-width: 800px;
+        margin-bottom: 4rem;
+        box-shadow: 7px 20px 44px -20px grey;
+        width: 100%;
+        min-height: 284px;
+
+        .content{
+            width: 50%;
+
+            h2{
+                font-size: 3.2rem;
+                font-family: 'El Messiri', sans-serif;
+                font-weight: normal;
+                line-height: 3.2rem;
+                color: #191919;
+                margin-bottom: 1rem;
+
+            }
+
+            h6{
+                color: #F84685;
+                font-size: 1.4rem;
+                margin-bottom: 2rem;;
+            }
+
+            .location{
+                font-size: 1.4rem;
+                margin-bottom: 1rem;
+
+                span.icon{
+                    margin-right: 1rem;
+                }
+            }
+
+            .dateTime{
+                font-size: 1.4rem;
+                
+                span.icon{
+                margin-right: 1rem;
+                }
+
+                span.days{
+                    color: #F84685;
+
+                }
+
+            }
+
+            .actionButton{
+                margin-top: 2rem;
+            }
+        }
+    }
+
+}
+
+.filterContainer{
+    width: 320px;
+    background-color: white;
+    border-radius: 10px;
+    padding-bottom: 6rem;  
+    border: 1px solid #F84685;
+
+    .filterTopBar{
+        background-color: #F84685;
+        border-radius: 5px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        padding: 1rem 2rem;
+        margin-bottom: 4rem;
+
+        label{
+            color:white;            
+        }
+
+    }
+
+    .filterChoices{
+        padding: 0 2rem;
+
+        p{
+            color: #F84685;
+            font-size: 1.3rem; 
+            margin-bottom: 2rem;
+        }
+
+        .filterOption{
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+
+            input{
+                width: 1.6rem;
+                height: 1.6rem;
+            }
+
+            label{
+                color: #9B9899;
+                font-size: 1.3rem; 
+                margin-left: 1rem;
+            }
+        }
+
+    }
+
+    .actionBtns{
+        margin-top: 4rem;
+        padding: 0 2rem;
+        
+
+        button:last-child{
+            margin-left: 2rem;
+        }
+    }
+}
