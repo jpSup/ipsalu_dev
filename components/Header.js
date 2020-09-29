@@ -27,7 +27,12 @@ const Header = ( { menu } ) => {
             <div className={styles.header_content_container}>
                 
                 <div className={styles.header_content_container__left}>
-                    <img src="https://habitek.co.za/wp/wp-content/uploads/2020/09/logo.png" alt="Ipsalu logo" />
+                    <Link href="/" >
+                        <a>
+                            <img src="https://habitek.co.za/wp/wp-content/uploads/2020/09/logo.png" alt="Ipsalu logo" />
+                        </a>
+                    </Link>
+                    
                     <div className={styles.logo_copy_container}>
                         <h1>Ipsalu Tantra</h1>
                         <h6>International</h6>

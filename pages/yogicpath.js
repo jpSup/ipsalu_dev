@@ -2,10 +2,10 @@ import Head from 'next/head'
 import { getPage, getAllModulesForSchool, getSocialLinks, getHeaderMenu, getFooterMenu } from '../lib/api'
 import Layout from '../components/Layout'
 import stylesGlobal from '../styles/common/Common.module.scss'
-import styles from '../styles/School.module.scss'
+import styles from '../styles/Yogicpath.module.scss'
 import Link from 'next/link'
 
-export default function Index({ home: { content, featuredImage, title }, courses, socials, headermenu, footermenu, preview }) {
+export default function yogicpath({ home: { content, featuredImage, title }, courses, socials, headermenu, footermenu, preview }) {
   const homePageFeatureImge = featuredImage.node.sourceUrl
 
   return (
@@ -13,7 +13,7 @@ export default function Index({ home: { content, featuredImage, title }, courses
       <Layout preview={preview} socials={socials} headermenu={headermenu} footermenu={footermenu}>
 
         <Head>
-          <title>Home Page</title>
+          <title>The Yogic Path</title>
         </Head>
 
         <div className={stylesGlobal.feature_header}>

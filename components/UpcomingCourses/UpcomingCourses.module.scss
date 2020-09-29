@@ -1,0 +1,90 @@
+.upcomingcourses{
+    margin-top: 6rem;
+
+    h2{
+        text-align: center;
+        font-size: 4.2rem;
+        margin-bottom: 6rem;
+    }
+
+    .upcomingcoursesSlider{
+
+        .slideItem{
+            margin-bottom: 3rem;
+            margin-left: 1.5rem;
+            margin-right: 1.5rem;
+
+            
+            .eventsBox{
+                background-repeat: no-repeat;
+                width: 360px;
+                height: 480px;
+                background-color: white;
+                border-radius: 1rem;
+                padding-left:1.8rem;
+                padding-right: 1.8rem;
+                padding-bottom: 1.8rem;
+                padding-top: 22rem;
+                box-shadow: 0 10px 11px -4px grey;
+                
+
+                .content{
+
+                    h2{
+                        font-size: 2.4rem;
+                        color: #101010;
+                        line-height: 2.4rem;
+                        font-family: 'El Messiri', sans-serif;
+                        margin-bottom: 0;
+                        text-align: left;
+
+                    }
+
+                    h6{
+                        font-size: 1.4rem;
+                        color: #101010;
+                        line-height: 2.4rem;
+                        margin-bottom: 2rem;
+
+                    }
+
+                    .location{
+                        font-size: 1.4rem;
+                        color: #101010;
+                        line-height: 2.4rem;
+                        margin-bottom: 2rem;
+
+                        span.icon{
+                            margin-right: 1rem;
+                        }
+
+                        
+
+                    }
+
+                    .dateTime{
+                        font-size: 1.4rem;
+                        color: #101010;
+                        line-height: 2.4rem;
+                        margin-bottom: 3rem;
+
+                        span.icon{
+                            margin-right: 1rem;
+                        }
+
+                        
+                    }
+
+                    a{
+                        font-size: 1.6rem;
+                    }
+
+
+                }
+            }
+        }
+
+    }
+
+    
+}

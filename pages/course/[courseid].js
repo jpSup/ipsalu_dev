@@ -1,21 +1,28 @@
 import Head from 'next/head'
-import { getModulesPage, getSocialLinks, getHeaderMenu, getFooterMenu, getTestimonials, getFaqs } from '../lib/api'
-import Layout from '../components/Layout'
+import { getModulesPage, getSocialLinks, getHeaderMenu, getFooterMenu, getTestimonials, getFaqs } from '../../lib/api'
+import Layout from '../../components/Layout'
 
-import stylesGlobal from '../styles/common/Common.module.scss'
-import styles from '../styles/CourseModules.module.scss'
+import stylesGlobal from '../../styles/common/Common.module.scss'
+import styles from '../../styles/CourseModules.module.scss'
 import Link from 'next/link'
 
-import Testimonials from "../components/Testimonial/Testimonials"
+import Testimonials from "../../components/Testimonial/Testimonials"
 
 
-import Accordion from '../components/Accordion'
+import Accordion from '../../components/Accordion'
+
+import { useRouter } from 'next/router'
 
 
-export default function InnerCourse({ modulesPage: { title, courseFields }, socials, headermenu, footermenu, preview, testimonials, faqs }) {
+export default function course({ modulesPage: { title, courseFields }, socials, headermenu, footermenu, preview, testimonials, faqs }) {
+  const router = useRouter()
+
+
+  if (router.isFallback) {
+    return <div>Loading...</div>
+  }
+
   const pageFeatureImge = courseFields.featuredImage.sourceUrl
-
-  
 
   return (
     <>
@@ -126,9 +133,20 @@ export default function InnerCourse({ modulesPage: { title, courseFields }, soci
   )
 }
 
+export async function getStaticPaths() {
+  return {
+    // Only `/course/150` and `/course/167` are generated at build time
+    paths: [{ params: { courseid: '150' } }, { params: { courseid: '167' } }],
+    // Enable statically generating additional pages
+    fallback: true,
+  }
+}
 
-export async function getStaticProps({ preview = false }) {
-  const modulesPage = await getModulesPage("150")
+
+export async function getStaticProps({ preview = false, params }) {
+  
+  const modulesPage = await getModulesPage(params.courseid)
+  
   const testimonials = await getTestimonials(preview)
   const faqs = await getFaqs(preview)
   const socials = await getSocialLinks()
@@ -137,5 +155,6 @@ export async function getStaticProps({ preview = false }) {
 
   return {
     props: { modulesPage, socials, headermenu, footermenu, preview, testimonials, faqs },
+    revalidate: 1,
   }
 }  

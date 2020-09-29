@@ -4,9 +4,16 @@ import Layout from '../components/Layout'
 
 import stylesGlobal from '../styles/common/Common.module.scss'
 import styles from '../styles/Events.module.scss'
+import moment from 'moment'
 import Link from 'next/link'
 
 export default function Events({ content, events, socials, headermenu, footermenu, preview }) {
+
+    /* const dateFiltered = upcomingcourses.nodes.filter( item => {        
+        if ( moment(item.eventFields.eventStartDate).diff( moment() ) > 1 ) { return true}
+        return false
+    })
+    */
 
     return (
         <>
@@ -83,8 +90,8 @@ export default function Events({ content, events, socials, headermenu, footermen
                                                 <span className={styles.icon}>
                                                     <img src="/calendar.svg" alt="calendar icon" />
                                                 </span>
-                                    <label>{ `${eventItem.eventFields.eventStartDate} - ${eventItem.eventFields.eventEndDate} ` }</label>
-                                                <span className={styles.days}>(4 days)</span>
+                                    <label>{ `${moment(eventItem.eventFields.eventStartDate, "YYYY-MM-DD").format('DD')} ${moment(eventItem.eventFields.eventStartDate, "YYYY-MM-DD").format('MMMM')} - ${moment(eventItem.eventFields.eventEndDate, "YYYY-MM-DD").format('DD')} ${moment(eventItem.eventFields.eventEndDate, "YYYY-MM-DD").format('MMMM')} ${moment(eventItem.eventFields.eventEndDate, "YYYY-MM-DD").format('YYYY')} `}</label>
+                                <span className={styles.days}>{ `${moment(eventItem.eventFields.eventEndDate).diff(moment(eventItem.eventFields.eventStartDate), 'days')} days` }</span>
                                             </div>
                                         </div>
                                     </div>

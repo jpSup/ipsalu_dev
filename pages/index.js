@@ -1,12 +1,18 @@
 import Head from 'next/head'
-import { getHomePage, getSocialLinks, getHeaderMenu, getFooterMenu, getTestimonials } from '../lib/api'
+import { getHomePage, getSocialLinks, getHeaderMenu, getFooterMenu, getTestimonials, getEvents } from '../lib/api'
 import Layout from '../components/Layout'
 import Testimonials from "../components/Testimonial/Testimonials"
 import stylesGlobal from '../styles/common/Common.module.scss'
 import styles from '../styles/Home.module.scss'
 import Link from 'next/link'
+import moment from 'moment'
+import UpcomingCourses from '../components/UpcomingCourses/UpcomingCourses'
 
-export default function Home({ home, socials, headermenu, footermenu, preview, testimonials }) {
+export default function index({ home, socials, headermenu, footermenu, preview, testimonials, events }) {
+
+  const courseDateObject = home.home_pageCustomFields.zone4ExploreCourse.courseFields;
+  const courseDateRange = `${moment(courseDateObject.courseStartDate, "YYYY-MM-DD").format('DD')} ${moment(courseDateObject.courseStartDate, "YYYY-MM-DD").format('MMMM')} - ${moment(courseDateObject.courseEndDate, "YYYY-MM-DD").format('DD')} ${moment(courseDateObject.courseEndDate, "YYYY-MM-DD").format('MMMM')} ${moment(courseDateObject.courseEndDate, "YYYY-MM-DD").format('YYYY')}`;
+  
 
   return (
     <>
@@ -101,7 +107,7 @@ export default function Home({ home, socials, headermenu, footermenu, preview, t
                   </a>
                 </Link>
                 <h3>{ `Starting from $${home.home_pageCustomFields.zone4ExploreCourse.courseFields.courseStartingFromPrice}` } </h3>
-                <p className={styles.dateRange}>{home.home_pageCustomFields.zone4ExploreCourse.courseFields.courseDateRange}</p>
+                <p className={styles.dateRange}>{ courseDateRange }</p>
           <p className={styles.courseFormat}>{ home.home_pageCustomFields.zone4ExploreCourse.courseFields.courseDeliveryFormat === "Online" ? 'Online course, live via Zoom' : 'Venue in description'}</p>
                 <Link href="#">
                   <a className={styles.exploreLink} >Explore</a>
@@ -115,6 +121,8 @@ export default function Home({ home, socials, headermenu, footermenu, preview, t
           <div className="section__spacer"></div>
 
           <Testimonials testimonials={ testimonials } />
+
+          <UpcomingCourses upcomingcourses={events} />
 
         </div>
 
@@ -130,8 +138,9 @@ export async function getStaticProps({ preview = false }) {
   const headermenu = await getHeaderMenu()
   const footermenu = await getFooterMenu()
   const testimonials = await getTestimonials(preview)
+  const events = await getEvents()
 
   return {
-    props: { home, socials, testimonials, headermenu, footermenu, preview },
+    props: { home, socials, testimonials, headermenu, footermenu, preview, events },
   }
 }

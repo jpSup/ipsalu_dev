@@ -6,7 +6,7 @@ import stylesGlobal from '../styles/common/Common.module.scss'
 import styles from '../styles/Courses.module.scss'
 import Link from 'next/link'
 
-export default function Courses({ coursesPage: { content, featuredImage, title }, courses, socials, headermenu, footermenu, preview }) {
+export default function courses({ coursesPage: { content, featuredImage, title }, courses, socials, headermenu, footermenu, preview }) {
   const pageFeatureImge = featuredImage.node.sourceUrl
 
   return (

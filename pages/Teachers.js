@@ -6,7 +6,7 @@ import stylesGlobal from '../styles/common/Common.module.scss'
 import styles from '../styles/Teachers.module.scss'
 import Link from 'next/link'
 
-export default function Teachers({ teachersPage: { content, featuredImage, title }, teachers, socials, headermenu, footermenu, preview }) {
+export default function teachers({ teachersPage: { content, featuredImage, title }, teachers, socials, headermenu, footermenu, preview }) {
   const pageFeatureImge = featuredImage.node.sourceUrl
 
   return (
