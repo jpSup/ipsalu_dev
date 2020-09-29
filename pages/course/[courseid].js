@@ -14,13 +14,14 @@ import Accordion from '../../components/Accordion'
 import { useRouter } from 'next/router'
 
 
-export default function course({ modulesPage: { title, courseFields }, socials, headermenu, footermenu, preview, testimonials, faqs }) {
+export default function course({ modulesPage: { courseFields }, socials, headermenu, footermenu, preview, testimonials, faqs }) {
   const router = useRouter()
 
 
   if (router.isFallback) {
     return <div>Loading...</div>
   }
+  console.log(courseFields)
 
   const pageFeatureImge = courseFields.featuredImage.sourceUrl
 
@@ -136,7 +137,7 @@ export default function course({ modulesPage: { title, courseFields }, socials, 
 export async function getStaticPaths() {
   return {
     // Only `/course/150` and `/course/167` are generated at build time
-    paths: [{ params: { courseid: '150' } }, { params: { courseid: '167' } }],
+    paths: [{ params: { courseid: '150' } }],
     // Enable statically generating additional pages
     fallback: true,
   }
