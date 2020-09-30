@@ -139,7 +139,7 @@ export async function getStaticPaths() {
     // Only `/course/150` and `/course/167` are generated at build time
     paths: [{ params: { courseid: '150' } }],
     // Enable statically generating additional pages
-    fallback: true,
+    fallback: false,
   }
 }
 
@@ -156,6 +156,6 @@ export async function getStaticProps({ preview = false, params }) {
 
   return {
     props: { modulesPage, socials, headermenu, footermenu, preview, testimonials, faqs },
-    revalidate: 1,
+    revalidate: 60,
   }
 }  
