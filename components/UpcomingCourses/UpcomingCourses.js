@@ -12,7 +12,6 @@ const UpcomingCourses = ({ upcomingcourses }) => {
         return false
     })
 
-    console.log(dateFiltered);
 
     const responsive = {
         desktop: {

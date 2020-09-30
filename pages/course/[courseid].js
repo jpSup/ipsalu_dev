@@ -8,20 +8,20 @@ import Link from 'next/link'
 
 import Testimonials from "../../components/Testimonial/Testimonials"
 
-
 import Accordion from '../../components/Accordion'
 
 import { useRouter } from 'next/router'
 
 
-export default function course({ modulesPage: { courseFields }, socials, headermenu, footermenu, preview, testimonials, faqs }) {
+export default function course({ modulesPage, socials, headermenu, footermenu, preview, testimonials, faqs }) {
   const router = useRouter()
 
 
   if (router.isFallback) {
     return <div>Loading...</div>
   }
-  console.log(courseFields)
+
+  const courseFields = modulesPage.courseFields
 
   const pageFeatureImge = courseFields.featuredImage.sourceUrl
 
