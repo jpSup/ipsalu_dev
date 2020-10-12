@@ -7,7 +7,7 @@ import styles from '../styles/EventDetail.module.scss'
 import Link from 'next/link'
 
 
-export default function eventdetail({ content, socials, headermenu, footermenu, preview }) {
+export default function EventDetail({ content, socials, headermenu, footermenu, preview }) {
 
     return (
         <>

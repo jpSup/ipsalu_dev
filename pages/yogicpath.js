@@ -117,7 +117,7 @@ export default function yogicpath({ home: { content, featuredImage, title }, cou
 
 
 export async function getStaticProps({ preview = false }) {
-  const home = await getPage("5")
+  const home = await getPage("323")
   const courses = await getAllModulesForSchool(preview)
   const socials = await getSocialLinks()
   const headermenu = await getHeaderMenu()

@@ -2,8 +2,10 @@ import Link from 'next/link'
 import styles from '../styles/Footer.module.scss'
 
 
-const Footer = ({ socials, menu }) => (
+const Footer = ({ socials, menu }) => {
 
+   
+    return(
     <footer className={styles.footer}>
 
         <div className={styles.footer_inner_container}>
@@ -32,8 +34,8 @@ const Footer = ({ socials, menu }) => (
                     <nav>
                         {
                             socials.nodes.map((social, index) => (
-                                <a key={index} href={social.url} target="_blank">
-                                    <img src={social.featuredImage.node.sourceUrl} alt={social.title} />
+                                <a key={index} href={social.link} target="_blank">
+                                    <img src={social.socialCustomFields.socialIcon.sourceUrl} alt={social.title} />
                                 </a>
                             ))
                         }
@@ -46,7 +48,8 @@ const Footer = ({ socials, menu }) => (
 
         </div>
     </footer>
-)
+    )
+}
 
 
 

@@ -6,6 +6,8 @@ import styles from '../styles/Header.module.scss'
 const Header = ( { menu } ) => {  
 
     const [isSticky, setSticky] = useState(false);
+
+    
     
     
     const handleScroll = () => {

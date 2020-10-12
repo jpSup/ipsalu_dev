@@ -12,6 +12,7 @@ export default function index({ home, socials, headermenu, footermenu, preview, 
 
   const courseDateObject = home.home_pageCustomFields.zone4ExploreCourse.courseFields;
   const courseDateRange = `${moment(courseDateObject.courseStartDate, "YYYY-MM-DD").format('DD')} ${moment(courseDateObject.courseStartDate, "YYYY-MM-DD").format('MMMM')} - ${moment(courseDateObject.courseEndDate, "YYYY-MM-DD").format('DD')} ${moment(courseDateObject.courseEndDate, "YYYY-MM-DD").format('MMMM')} ${moment(courseDateObject.courseEndDate, "YYYY-MM-DD").format('YYYY')}`;
+
   
 
   return (
